@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pikotto for YouTube</title>
+  <link rel="stylesheet" href="sidepanel.css" />
+</head>
+<body>
+  <div class="header-row">
+    <div id="appInfo">
+      <span id="appVersionInfo"></span>
+      <span class="sep">|</span>
+      <a id="storePageLink" href="#" target="_blank" rel="noopener" data-i18n="storePageLink"></a>
+      <span class="sep">|</span>
+      <a href="welcome.html" target="_blank" rel="noopener" data-i18n="usageLink"></a>
+      <span id="bugReportGroup">
+        <span class="sep">|</span>
+        <a id="bugReportLink" href="#" target="_blank" rel="noopener" data-i18n="bugReportLink"></a>
+      </span>
+    </div>
+    <h1><img src="icons/icon32.png" alt="" width="20" height="20" /> Pikotto for YouTube | ピコット</h1>
+  </div>
+
+  <section class="card">
+    <button id="manualCaptureBtn" class="primary-btn">
+      <img src="icons/capture.svg" data-i18n-alt="captureIconAlt" />
+      <span data-i18n="manualCaptureBtn"></span>
+    </button>
+    <div class="row" style="margin-top: 10px;">
+      <label data-i18n="formatLabel"></label>
+      <select id="formatSelect">
+        <option value="png">PNG</option>
+        <option value="jpeg">JPEG</option>
+      </select>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-title">
+      <input type="checkbox" id="randomEnabled" />
+      <span data-i18n="randomCaptureTitle"></span>
+    </div>
+    <div class="row">
+      <label data-i18n="frequencyLabel"></label>
+      <input type="number" id="randomPerHour" min="1" max="60" style="width: 56px" />
+      <span data-i18n="perHourSuffix"></span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-title">
+      <span data-i18n="scheduledCaptureTitle"></span>
+    </div>
+    <ul id="scheduleList" class="schedule-list"></ul>
+    <div class="row">
+      <input type="time" id="newScheduleTime" />
+      <button id="addScheduleBtn" class="secondary-btn" data-i18n="addBtn"></button>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-title">
+      <span data-i18n="burstSettingsTitle"></span>
+    </div>
+    <div class="row">
+      <label data-i18n="countLabel"></label>
+      <input type="number" id="burstCount" min="1" max="20" style="width: 56px" />
+      <label data-i18n="intervalLabel"></label>
+      <input type="number" id="burstInterval" min="100" max="5000" step="100" style="width: 70px" />
+      <span data-i18n="msSuffix"></span>
+    </div>
+    <div class="row apply-to">
+      <label><input type="checkbox" id="applyScheduled" /> <span data-i18n="applyScheduled"></span></label>
+      <label><input type="checkbox" id="applyShortcut" /> <span data-i18n="applyShortcut"></span></label>
+      <label><input type="checkbox" id="applyManual" /> <span data-i18n="applyManual"></span></label>
+    </div>
+  </section>
+
+  <p id="status" class="status"></p>
+
+  <footer>
+    <a href="https://manachitose.booth.pm/items/7671332" target="_blank" rel="noopener" title="TokiSync 販売中！">
+      <img src="https://manachitose.github.io/TokiSync/icons/TokiSync_og_image.jpg" alt="TokiSync 販売中！" />
+    </a>
+    <a href="https://manachitose.github.io/" target="_blank" rel="noopener" title="クリエイター/千歳愛 HP">
+      <img src="https://manachitose.github.io/assets/images/home_og_image.jpg" alt="クリエイター/千歳愛 HP" />
+    </a>
+  </footer>
+
+  <script src="settings.js"></script>
+  <script src="sidepanel.js"></script>
+</body>
+</html>

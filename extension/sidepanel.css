@@ -1,0 +1,250 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 12px;
+  font-family: -apple-system, "Segoe UI", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 13px;
+  color: #33691e;
+  background: #fdfffa;
+}
+
+.header-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  margin: 4px 0 12px;
+}
+
+.header-row h1 {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  margin: 0;
+  color: #33691e;
+}
+
+.header-row h1 img {
+  display: block;
+  border-radius: 4px;
+}
+
+#appInfo {
+  font-size: 11px;
+  color: #689f38;
+  white-space: nowrap;
+}
+
+#appInfo a {
+  color: #689f38;
+  text-decoration: none;
+}
+
+#appInfo a:hover {
+  text-decoration: underline;
+}
+
+#appInfo .sep {
+  margin: 0 4px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #dcedc8;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.apply-to {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.apply-to label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+input[type="number"],
+input[type="time"],
+select {
+  border: 1px solid #c5e1a5;
+  border-radius: 4px;
+  padding: 4px 6px;
+  font: inherit;
+  color: #33691e;
+  background: #fff;
+}
+
+.primary-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #8bc34a;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.primary-btn img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+}
+
+.primary-btn:hover {
+  background: #7cb342;
+}
+
+.primary-btn:active {
+  background: #689f38;
+}
+
+.secondary-btn {
+  padding: 5px 10px;
+  border: 1px solid #8bc34a;
+  border-radius: 4px;
+  background: #fff;
+  color: #558b2f;
+  cursor: pointer;
+}
+
+.secondary-btn:hover {
+  background: #f1f8e9;
+}
+
+.schedule-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.schedule-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f1f8e9;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+.schedule-list li .time {
+  flex: 1;
+}
+
+.schedule-list li button {
+  border: none;
+  background: none;
+  color: #dc2626;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  width: 34px;
+  height: 20px;
+  flex: 0 0 auto;
+  margin: 0;
+  border-radius: 999px;
+  background-color: #cccccc;
+  border: 1px solid #c5e1a5;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: background-color 0.2s ease;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 1px;
+  top: 1px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #8bc34a;
+  border-color: #8bc34a;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: translateX(14px);
+}
+
+.status {
+  text-align: center;
+  color: #689f38;
+  min-height: 16px;
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 0 8px;
+}
+
+footer a {
+  display: block;
+  flex: 1 1 200px;
+  max-width: 260px;
+  line-height: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #dcedc8;
+  opacity: 0.85;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+footer a:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+footer img {
+  display: block;
+  width: 100%;
+  min-width: 200px;
+  object-fit: cover;
+}

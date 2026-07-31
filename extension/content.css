@@ -1,0 +1,53 @@
+#pikkot-capture-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 9999;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(20, 20, 20, 0.75);
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.1s ease, background 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+#pikkot-capture-button img {
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+#pikkot-capture-button:hover {
+  background: rgba(20, 20, 20, 0.9);
+}
+
+#pikkot-capture-button:active {
+  transform: scale(0.92);
+}
+
+#pikkot-capture-button.pikkot-flash-ok {
+  animation: pikkot-flash-ok 0.4s ease;
+}
+
+#pikkot-capture-button.pikkot-flash-error {
+  animation: pikkot-flash-error 0.4s ease;
+}
+
+@keyframes pikkot-flash-ok {
+  0% { background: #8bc34a; }
+  100% { background: rgba(20, 20, 20, 0.75); }
+}
+
+@keyframes pikkot-flash-error {
+  0% { background: #e74c3c; }
+  100% { background: rgba(20, 20, 20, 0.75); }
+}
