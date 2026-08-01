@@ -2,7 +2,7 @@
   "extName": { "message": "Pikotto for YouTube" },
   "extDescription": { "message": "One-click screenshot capture for YouTube videos, with burst, random, and scheduled shooting" },
   "storePageLink": { "message": "Store Page" },
-  "usageLink": { "message": "How to Use" },
+  "usageLink": { "message": "Getting Started" },
   "bugReportLink": { "message": "Report a Bug" },
   "manualCaptureBtn": { "message": "Capture Now" },
   "formatLabel": { "message": "Image Format" },

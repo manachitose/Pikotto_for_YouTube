@@ -2,7 +2,7 @@
   "extName": { "message": "Pikotto for YouTube" },
   "extDescription": { "message": "YouTube 영상 재생 중 원클릭으로 스크린샷을 캡처하는 도구. 연속 촬영, 랜덤 촬영, 예약 촬영 지원" },
   "storePageLink": { "message": "스토어 페이지" },
-  "usageLink": { "message": "사용법" },
+  "usageLink": { "message": "시작하기" },
   "bugReportLink": { "message": "버그 신고" },
   "manualCaptureBtn": { "message": "지금 촬영" },
   "formatLabel": { "message": "저장 형식" },

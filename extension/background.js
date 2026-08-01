@@ -7,7 +7,12 @@ chrome.sidePanel
 const RANDOM_ALARM = "pikkot-random";
 const SCHEDULED_ALARM_PREFIX = "pikkot-scheduled-";
 
-chrome.runtime.onInstalled.addListener(rebuildAlarms);
+chrome.runtime.onInstalled.addListener((details) => {
+  rebuildAlarms();
+  if (details.reason === "install") {
+    chrome.tabs.create({ url: chrome.runtime.getURL("welcome.html") });
+  }
+});
 chrome.runtime.onStartup.addListener(rebuildAlarms);
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {

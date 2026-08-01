@@ -2,7 +2,7 @@
   "extName": { "message": "Pikotto for YouTube" },
   "extDescription": { "message": "在觀看YouTube影片時一鍵截圖，支援連拍、隨機截圖與預約截圖" },
   "storePageLink": { "message": "商店頁面" },
-  "usageLink": { "message": "使用方法" },
+  "usageLink": { "message": "開始使用" },
   "bugReportLink": { "message": "問題回報" },
   "manualCaptureBtn": { "message": "立即截圖" },
   "formatLabel": { "message": "儲存格式" },

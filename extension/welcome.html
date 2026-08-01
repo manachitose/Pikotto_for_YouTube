@@ -2,93 +2,113 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <title>使い方 | Pikotto for YouTube</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pikotto for YouTubeへようこそ</title>
   <style>
-    * {
-      box-sizing: border-box;
+    :root {
+      --bg: #f8fbf5;
+      --panel-bg: #ffffff;
+      --border: #dce9cf;
+      --text: #24321d;
+      --text-muted: #667260;
+      --accent: #7cb342;
+      --accent-soft: #eef7e5;
     }
-
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1b2118;
+        --panel-bg: #252d21;
+        --border: #3d4b35;
+        --text: #eef4e9;
+        --text-muted: #b3beac;
+        --accent: #9ccc65;
+        --accent-soft: #303d27;
+      }
+    }
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      padding: 32px 20px 64px;
-      max-width: 720px;
-      margin-left: auto;
-      margin-right: auto;
-      font-family: -apple-system, "Segoe UI", "Hiragino Kaku Gothic ProN", sans-serif;
-      font-size: 14px;
-      line-height: 1.8;
-      color: #33691e;
-      background: #fdfffa;
+      padding: 48px 24px 64px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, "Segoe UI", "Hiragino Sans", "Yu Gothic UI", sans-serif;
+      line-height: 1.7;
     }
-
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+    }
     h1 {
-      font-size: 22px;
-      margin-bottom: 4px;
+      margin: 0 0 4px;
+      font-size: 24px;
     }
-
-    h2 {
+    .lead {
+      margin: 0 0 32px;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    .card {
+      margin-bottom: 16px;
+      padding: 18px 20px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--panel-bg);
+    }
+    .card.primary {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+    }
+    .card h2 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 8px;
       font-size: 16px;
-      margin-top: 32px;
-      border-left: 4px solid #8bc34a;
-      padding-left: 8px;
     }
-
-    .tip {
-      background: #fff;
-      border: 1px solid #dcedc8;
-      border-radius: 8px;
-      padding: 12px 16px;
-      margin: 16px 0;
+    .icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      font-size: 14px;
     }
-
-    .tip strong {
-      color: #558b2f;
+    .card p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 14px;
     }
-
+    .card.primary p { color: var(--text); }
     code {
-      background: #dcedc8;
       padding: 1px 5px;
       border-radius: 4px;
+      background: var(--border);
       font-size: 0.9em;
     }
-
-    ol, ul {
-      padding-left: 20px;
-    }
-
-    .updated {
-      color: #689f38;
-      font-size: 12px;
-      margin-top: 40px;
+    @media (max-width: 480px) {
+      body { padding: 32px 16px 48px; }
+      .card { padding: 16px; }
     }
   </style>
 </head>
 <body>
-  <h1>Pikotto for YouTube の使い方</h1>
-  <p>YouTube視聴中の「今見ている瞬間」をワンクリックでスクリーンショット保存できる拡張機能です。</p>
+  <main class="container">
+    <h1>Pikotto for YouTubeへようこそ</h1>
+    <p class="lead">YouTubeで見ている瞬間を、ワンクリックでスクリーンショット保存できます。</p>
 
-  <div class="tip">
-    📌 <strong>サイドパネルはピン留めがおすすめ</strong><br />
-    ツールバーの拡張機能アイコン(パズルのピース)を開き、Pikotto for YouTubeの📌をクリックしてツールバーに固定しておくと、いつでもワンクリックで設定パネルを開き閉じできて便利です。
-  </div>
+    <section class="card primary">
+      <h2><span class="icon">📌</span>まずはツールバーに固定</h2>
+      <p>ブラウザ右上の拡張機能アイコン（パズルのピース）を開き、Pikotto for YouTubeのピンをクリックしてください。いつでもワンクリックでサイドパネルを開けるようになります。</p>
+    </section>
 
-  <h2>1. 手動で撮影する</h2>
-  <ol>
-    <li>YouTubeの動画・Shortsを再生する</li>
-    <li>プレイヤー上に表示される📸ボタンをクリック(Shortsでは動画の右隣りに表示されます)</li>
-    <li>撮影した画像はダウンロードフォルダの <code>Pikotto_for_YouTube/</code> に自動保存されます</li>
-  </ol>
-  <p>ツールバーのアイコンをクリックしてサイドパネルを開き、「今すぐ撮影」ボタンからも同様に撮影できます。</p>
-
-  <h2>2. ランダム撮影</h2>
-  <p>サイドパネルでON/OFFと「◯枚/時」の頻度を設定すると、YouTube視聴中にランダムなタイミングで自動撮影されます。</p>
-
-  <h2>3. 予約撮影</h2>
-  <p>撮影したい時刻を追加しておくと、その時刻にYouTubeを視聴していれば自動で撮影されます。</p>
-
-  <h2>4. 連写撮影</h2>
-  <p>「連写設定」で枚数と間隔(ms)を指定し、適用先(予約撮影・ショートカットボタン・手動撮影)にチェックを入れると、そのトリガーのたびに指定枚数を連続撮影します。</p>
-
-  <p class="updated">最終更新日: 2026-07-31</p>
+    <section class="card">
+      <h2><span class="icon">📷</span>あとはYouTubeを開くだけ</h2>
+      <p>YouTubeの動画やShortsを再生し、プレイヤー上の撮影ボタン、またはサイドパネルの「今すぐ撮影」から保存できます。画像はダウンロードフォルダの <code>Pikotto_for_YouTube/</code> に保存されます。</p>
+    </section>
+  </main>
 </body>
 </html>

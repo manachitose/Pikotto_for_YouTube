@@ -2,7 +2,7 @@
   "extName": { "message": "Pikotto for YouTube | ピコット" },
   "extDescription": { "message": "YouTube再生中の動画をワンクリックでスクリーンショット撮影するツール" },
   "storePageLink": { "message": "ストアページ" },
-  "usageLink": { "message": "使い方" },
+  "usageLink": { "message": "はじめに" },
   "bugReportLink": { "message": "不具合報告" },
   "manualCaptureBtn": { "message": "今すぐ撮影" },
   "formatLabel": { "message": "保存形式" },
