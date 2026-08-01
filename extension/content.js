@@ -114,7 +114,7 @@
   }
 
   function isVideoPage() {
-    return /^\/(watch|shorts\/)/.test(location.pathname);
+    return /^\/(watch|shorts\/|live\/)/.test(location.pathname);
   }
 
   function isShortsPage() {

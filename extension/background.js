@@ -68,7 +68,7 @@ chrome.alarms.onAlarm.addListener(async (alarm) => {
 
 async function triggerCaptureOnYoutubeTabs(burst) {
   const tabs = await chrome.tabs.query({
-    url: ["*://*.youtube.com/watch*", "*://*.youtube.com/shorts/*"],
+    url: ["*://*.youtube.com/watch*", "*://*.youtube.com/shorts/*", "*://*.youtube.com/live/*"],
   });
   if (tabs.length === 0) return false;
 
