@@ -11,7 +11,7 @@ if (!chrome.i18n.getUILanguage().startsWith("ja")) {
 }
 
 // コード変更のたびに手動で更新する(バージョンはmanifest.jsonから自動取得)
-const LAST_UPDATED = "2026-08-01";
+const LAST_UPDATED = "2026-08-02";
 
 document.getElementById("appVersionInfo").textContent =
   `v${chrome.runtime.getManifest().version} (最終更新: ${LAST_UPDATED})`;
