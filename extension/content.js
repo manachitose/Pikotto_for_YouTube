@@ -1,5 +1,9 @@
 (() => {
   const BUTTON_ID = "pikkot-capture-button";
+  const INCLUDE_BUTTON_ID = "pikkot-include-button";
+
+  // タブごとの状態。ページ全体リロードでリセットされる(SPA内遷移では保持される)。
+  let includeInBatch = false;
 
   function sanitizeFilename(name) {
     return name.replace(/[\\/:*?"<>|]/g, "_").trim().slice(0, 100);
@@ -105,6 +109,19 @@
     flashButton(ok);
   }
 
+  function applyIncludeButtonState(btn) {
+    btn.classList.toggle("pikkot-include-on", includeInBatch);
+    btn.title = chrome.i18n.getMessage(
+      includeInBatch ? "includeToggleOnTitle" : "includeToggleOffTitle"
+    );
+  }
+
+  function handleIncludeToggleClick() {
+    includeInBatch = !includeInBatch;
+    const btn = document.getElementById(INCLUDE_BUTTON_ID);
+    if (btn) applyIncludeButtonState(btn);
+  }
+
   function flashButton(success) {
     const btn = document.getElementById(BUTTON_ID);
     if (!btn) return;
@@ -121,11 +138,11 @@
     return location.pathname.startsWith("/shorts/");
   }
 
-  function positionBesidePlayer(btn, player) {
+  function positionBesidePlayer(btn, player, topOffset) {
     const rect = player.getBoundingClientRect();
     btn.style.position = "fixed";
     btn.style.left = `${Math.round(rect.right + 12)}px`;
-    btn.style.top = `${Math.round(rect.top + 12)}px`;
+    btn.style.top = `${Math.round(rect.top + 12 + topOffset)}px`;
     btn.style.right = "auto";
   }
 
@@ -145,6 +162,7 @@
 
     if (!isVideoPage()) {
       document.getElementById(BUTTON_ID)?.remove();
+      document.getElementById(INCLUDE_BUTTON_ID)?.remove();
       return;
     }
 
@@ -166,25 +184,49 @@
       btn.addEventListener("click", handleButtonClick);
     }
 
+    let includeBtn = document.getElementById(INCLUDE_BUTTON_ID);
+    if (!includeBtn) {
+      includeBtn = document.createElement("button");
+      includeBtn.id = INCLUDE_BUTTON_ID;
+      const icon = document.createElement("img");
+      icon.src = chrome.runtime.getURL("icons/pin.svg");
+      icon.alt = chrome.i18n.getMessage("includeToggleIconAlt");
+      includeBtn.appendChild(icon);
+      includeBtn.addEventListener("click", handleIncludeToggleClick);
+      applyIncludeButtonState(includeBtn);
+    }
+
     btn.classList.toggle("pikkot-in-shorts", shorts);
+    includeBtn.classList.toggle("pikkot-in-shorts", shorts);
 
     if (shorts) {
       if (btn.parentElement !== document.body) document.body.appendChild(btn);
-      positionBesidePlayer(btn, player);
+      if (includeBtn.parentElement !== document.body) document.body.appendChild(includeBtn);
+      positionBesidePlayer(btn, player, 0);
+      positionBesidePlayer(includeBtn, player, 52);
     } else {
       btn.style.position = "";
       btn.style.left = "";
       btn.style.top = "";
       btn.style.right = "";
+      includeBtn.style.position = "";
+      includeBtn.style.left = "";
+      includeBtn.style.top = "";
+      includeBtn.style.right = "";
       if (getComputedStyle(player).position === "static") {
         player.style.position = "relative";
       }
       if (btn.parentElement !== player) player.appendChild(btn);
+      if (includeBtn.parentElement !== player) player.appendChild(includeBtn);
     }
   }
 
   chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.type !== "trigger-capture") return false;
+    if (!includeInBatch) {
+      sendResponse({ ok: false });
+      return false;
+    }
     captureBurst(message.burst).then((ok) => {
       flashButton(ok);
       sendResponse({ ok });

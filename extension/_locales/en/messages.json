@@ -22,5 +22,8 @@
   "statusSaved": { "message": "Saved" },
   "statusCaptured": { "message": "Captured" },
   "statusCaptureFailed": { "message": "Capture failed" },
-  "captureButtonTitle": { "message": "Pikotto for YouTube: Capture this moment" }
+  "captureButtonTitle": { "message": "Pikotto for YouTube: Capture this moment" },
+  "includeToggleOnTitle": { "message": "This tab is included in auto/batch capture (click to exclude)" },
+  "includeToggleOffTitle": { "message": "This tab is excluded from auto/batch capture (click to include)" },
+  "includeToggleIconAlt": { "message": "Toggle this tab for auto/batch capture" }
 }

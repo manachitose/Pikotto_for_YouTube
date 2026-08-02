@@ -22,5 +22,8 @@
   "statusSaved": { "message": "저장했습니다" },
   "statusCaptured": { "message": "촬영했습니다" },
   "statusCaptureFailed": { "message": "촬영하지 못했습니다" },
-  "captureButtonTitle": { "message": "Pikotto for YouTube: 이 순간을 캡처" }
+  "captureButtonTitle": { "message": "Pikotto for YouTube: 이 순간을 캡처" },
+  "includeToggleOnTitle": { "message": "이 탭: 자동/일괄 촬영 대상입니다 (클릭 시 제외)" },
+  "includeToggleOffTitle": { "message": "이 탭: 자동/일괄 촬영 대상이 아닙니다 (클릭 시 포함)" },
+  "includeToggleIconAlt": { "message": "자동/일괄 촬영 대상 탭 전환" }
 }

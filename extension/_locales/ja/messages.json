@@ -22,5 +22,8 @@
   "statusSaved": { "message": "保存しました" },
   "statusCaptured": { "message": "撮影しました" },
   "statusCaptureFailed": { "message": "撮影できませんでした" },
-  "captureButtonTitle": { "message": "Pikotto for YouTube: この瞬間をキャプチャ" }
+  "captureButtonTitle": { "message": "Pikotto for YouTube: この瞬間をキャプチャ" },
+  "includeToggleOnTitle": { "message": "このタブ: 自動/一括撮影の対象です(クリックで対象から外す)" },
+  "includeToggleOffTitle": { "message": "このタブ: 自動/一括撮影の対象外です(クリックで対象に含める)" },
+  "includeToggleIconAlt": { "message": "自動/一括撮影の対象タブ切り替え" }
 }

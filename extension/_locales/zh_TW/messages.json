@@ -22,5 +22,8 @@
   "statusSaved": { "message": "已儲存" },
   "statusCaptured": { "message": "已截圖" },
   "statusCaptureFailed": { "message": "截圖失敗" },
-  "captureButtonTitle": { "message": "Pikotto for YouTube：擷取此刻畫面" }
+  "captureButtonTitle": { "message": "Pikotto for YouTube：擷取此刻畫面" },
+  "includeToggleOnTitle": { "message": "此分頁：目前為自動/批次截圖對象(點擊可移除)" },
+  "includeToggleOffTitle": { "message": "此分頁：目前不是自動/批次截圖對象(點擊可加入)" },
+  "includeToggleIconAlt": { "message": "切換此分頁是否為自動/批次截圖對象" }
 }
